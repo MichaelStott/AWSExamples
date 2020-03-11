@@ -1,7 +1,6 @@
 import * as aws from "@pulumi/aws";
 import * as awsx from "@pulumi/awsx";
 
-// 
 const api = new awsx.apigateway.API("serverlesspartyparrot", {
     routes: [{
         path: "/",
