@@ -1,12 +1,14 @@
 import * as aws from "@pulumi/aws";
 import * as awsx from "@pulumi/awsx";
 
-const api = new awsx.apigateway.API("serverlesspartyparrot", {
+// Provision an API Gateway instance.
+const api = new awsx.apigateway.API("serverless-party-parrot", {
     routes: [{
+        // Define an HTTP endpoint.
         path: "/",
         method: "GET",
+        // Create a Lambda function that will be triggered upon accessing this endpoint.
         eventHandler: new aws.lambda.CallbackFunction("handler", {
-            memorySize: 256,
             callback: async (event) => {
                 return {
                     statusCode: 200,
@@ -18,4 +20,5 @@ const api = new awsx.apigateway.API("serverlesspartyparrot", {
     }],
 })
 
+// The URL of the deployed serverless webpage.
 export const url = api.url;
