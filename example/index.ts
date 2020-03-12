@@ -10,6 +10,7 @@ const api = new awsx.apigateway.API("serverless-party-parrot", {
         // Create a Lambda function that will be triggered upon accessing this endpoint.
         eventHandler: new aws.lambda.CallbackFunction("handler", {
             callback: async (event) => {
+                // Cry havoc and let slip the parrots of war.
                 return {
                     statusCode: 200,
                     headers: {"Content-Type": "text/html"},
