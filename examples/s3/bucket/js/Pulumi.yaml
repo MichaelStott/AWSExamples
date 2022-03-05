@@ -1,0 +1,3 @@
+name: bucket-jas
+runtime: nodejs
+description: Create an S3 bucket.

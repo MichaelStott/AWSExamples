@@ -1,2 +1,3 @@
 # AWS Examples
-Dumping ground for any AWS examples.
+
+Collection of AWS examples.
