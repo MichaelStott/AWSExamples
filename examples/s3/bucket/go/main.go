@@ -7,14 +7,12 @@ import (
 
 func main() {
 	pulumi.Run(func(ctx *pulumi.Context) error {
-		// Create an AWS resource (S3 Bucket)
-		bucket, err := s3.NewBucket(ctx, "my-bucket", nil)
+		bucket, err := s3.NewBucket(ctx, "tech-squawks-bucket", nil)
 		if err != nil {
 			return err
 		}
 
-		// Export the name of the bucket
-		ctx.Export("bucketName", bucket.ID())
+		ctx.Export("tech-squawks-bucket", bucket.ID())
 		return nil
 	})
 }
